@@ -25,6 +25,7 @@ function Notes(props) {
         <div className="note-div">
             {noteItems.map((note) => (
             <div className="note-card">
+                <h2>{note.title}</h2>
                 <p>{note.text}</p>
                 <button onClick={() => { deleteNote(note) } }>x</button>
                 <p>{`note date: ${humanReadebleDate(note.date)}` }</p>

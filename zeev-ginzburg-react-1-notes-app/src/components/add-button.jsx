@@ -9,6 +9,7 @@ function AddButton(props) {
         const newNoteItem = {
             text:`Example Note`,
             date: new Date(),
+            title: `Note Title`
         };
         addNewNote(newNoteItem);
     }
