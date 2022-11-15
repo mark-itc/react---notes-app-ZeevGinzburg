@@ -2,28 +2,31 @@ import "./notes.css"
 
 
 function Notes(props) {
-    const {noteItems} = props;
+    const {noteItems, deleteNote} = props;
 
-    /**
-     * Feormat date
-     * @param {Date} date The date
-     */
     const humanReadebleDate = (date) => {
         const day = date.getDate();
         const month = date.getMonth() + 1;
         const year = date.getFullYear();
+        const hour = date.getHours();
+        const minute = date.getMinutes();
+        const second = date.getSeconds();
 
+
+        
         return (
-            `${day}/${month}/${year}`
+            `${day}/${month}/${year} ${hour}:${minute} ${second}`
         )
         
     }
+
 
     return (<>
         <div className="note-div">
             {noteItems.map((note) => (
             <div className="note-card">
                 <p>{note.text}</p>
+                <button onClick={() => { deleteNote(note) } }>x</button>
                 <p>{`note date: ${humanReadebleDate(note.date)}` }</p>
             </div>
             ))}
