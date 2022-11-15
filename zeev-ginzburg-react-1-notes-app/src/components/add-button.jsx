@@ -6,7 +6,10 @@ function AddButton(props) {
 
     function addNote(e) {
         e.preventDefault();
-        const newNoteItem = `Example Note`;
+        const newNoteItem = {
+            text:`Example Note`,
+            date: new Date(),
+        };
         addNewNote(newNoteItem);
     }
 
