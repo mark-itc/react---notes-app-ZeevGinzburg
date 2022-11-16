@@ -4,10 +4,13 @@
     padding: 0;
 }
 button.add-button {
-    font-size: medium;
+    font-size: 1.2rem;
     padding: 1rem 1.5rem;
-}
-.note-card {
-    border: 3px solid black;
+    font-family:'Marhey', cursive;
+    font-weight: bolder;
+    border-radius: 10px; 
+    background-color: #f5a684;
+    border: 1px solid #c57e60;
+    ;
 
 }

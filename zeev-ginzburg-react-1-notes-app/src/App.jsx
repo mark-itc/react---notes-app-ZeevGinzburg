@@ -6,10 +6,10 @@ import { useState } from "react";
 function App() {
   const [noteItems, setNoteItems] = useState([]);
   const [opened, setOpened] = useState(null);
-
   const addNewNote = (newNoteItem) => {
     setNoteItems([...noteItems, newNoteItem]);
   }
+
   const deleteNote = (noteToDelete) => {
     setNoteItems(noteItems.filter((note) => {
       if (note === noteToDelete) {
@@ -18,23 +18,26 @@ function App() {
       else return true;
     }));
   }
+
   const openNote = (noteToOpen) => {
     setOpened(noteToOpen);
   }
+
   const modal = () => {
     if (opened) {
       return (
         <div className={`modal`}>
-        <div className='modal-content'><h2>{opened.title}</h2>
-        <p>{opened.text}</p>
-        <button onClick={() => { setOpened(null) }}>x</button>
-        {/* <p>{`note date: ${humanReadebleDate(note.date)}`}</p> */}
+          <div className='modal-content'>
+            <div className='header'>
+              <h2>{opened.title}</h2>
+              <button onClick={() => { setOpened(null) }}>x</button>
+            </div>
+            <p>{opened.text}</p>
+            {/* <p>{`note date: ${humanReadebleDate(note.date)}`}</p> */}
+          </div>
       </div>
-      </div>
-  
       )
     }
-
   }
 
   return (
@@ -42,7 +45,6 @@ function App() {
       <Form addNewNote={addNewNote} />
       <Notes noteItems={noteItems} deleteNote={deleteNote} openNote={openNote}/>
       {modal()}
-
     </div>
   );
 }
