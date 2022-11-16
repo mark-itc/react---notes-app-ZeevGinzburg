@@ -2,7 +2,7 @@ import "./notes.css"
 
 
 function Notes(props) {
-    const {noteItems, deleteNote} = props;
+    const {noteItems, deleteNote, openNote} = props;
 
     const humanReadebleDate = (date) => {
         const day = date.getDate();
@@ -19,15 +19,18 @@ function Notes(props) {
         )
         
     }
-
+    
 
     return (<>
         <div className="note-div">
             {noteItems.map((note) => (
-            <div className="note-card">
+            <div className="note-card" onClick={() => {openNote(note)}}>
                 <h2>{note.title}</h2>
                 <p>{note.text}</p>
-                <button onClick={() => { deleteNote(note) } }>x</button>
+                <button onClick={(event) => {
+                    event.stopPropagation();
+                    deleteNote(note);
+                }}>x</button>
                 <p>{`note date: ${humanReadebleDate(note.date)}` }</p>
             </div>
             ))}
