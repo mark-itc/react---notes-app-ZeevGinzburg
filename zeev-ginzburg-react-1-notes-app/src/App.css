@@ -58,7 +58,7 @@ div.modal-content {
   font-family: 'Poppins';
   display: flex;
   flex-direction: column;
-  box-shadow: 7px 7px 15px 0.1px #906552;KC
+  box-shadow: 7px 7px 15px 0.1px #906552;
 }
 
 div.modal-content .header{
