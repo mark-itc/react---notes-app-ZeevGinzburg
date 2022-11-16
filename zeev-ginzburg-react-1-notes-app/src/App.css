@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+div.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+
+}
+div.modal-content {
+  border: 2px solid  rgb(44, 69, 61);
+  margin: auto;
+  background-color: rgb(103, 138, 127);
+  padding: 1.8rem;
+
+  
+}
